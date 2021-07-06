@@ -18,7 +18,7 @@ import './App.css';
 
 import { fetch_curr_gw, fetch_team_ids } from './redux/actionCreators';
 
-const RERENDER_DELAY_MS = 100;
+const RERENDER_DELAY_MS = 250;
 
 store.dispatch(fetch_curr_gw());
 store.dispatch(fetch_team_ids());
@@ -29,8 +29,9 @@ function App() {
   useEffect(() => {
     window.addEventListener('resize', debounce(handleResize, RERENDER_DELAY_MS));
     return () => window.removeEventListener('resize', debounce(handleResize, RERENDER_DELAY_MS));
-  });
+  }, []);
   const handleResize = () => set_window_width(window.innerWidth);
+  useEffect(() => console.log('window_width', window_width), [window_width]);
 
   return (
     <Provider store={store}>
