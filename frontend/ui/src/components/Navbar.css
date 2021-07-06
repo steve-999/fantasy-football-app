@@ -1,0 +1,174 @@
+
+html {
+    --navbarBackgroundColor: DarkSlateBlue;
+    --tabBackgroundColor: MediumSlateBlue;
+    --tabHoverBackgroundColor: lightblue;
+    --activeTabLinkTextColor: DarkSlateBlue;
+}
+
+.nav-container {
+    width: 100%;
+    height: 90px;
+    background-color: var(--navbarBackgroundColor);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    font-family: Nunito;
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.nav-ul {
+    margin: 0 auto;
+    padding: 0px;
+    margin-top: 13px;
+    list-style: none;
+}
+    
+.nav-ul li.nav-li {
+    display: inline-block;
+    background: var(--tabBackgroundColor);
+    padding: 0px;
+    margin: 0px 1px;
+    border-top-left-radius: 8px; 
+    border-top-right-radius: 8px; 
+    width: 80px;
+}
+
+.nav-ul a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 4px 0px 0 0px;
+    margin: 0 auto;
+    width: 75px;
+    text-align: center;
+}
+
+.nav-ul li.nav-li:hover {
+    background: var(--tabHoverBackgroundColor);
+}
+
+.nav-ul a:hover {
+    text-decoration: none;
+    color: midnightblue;
+}
+
+.nav-ul a.active-class {
+    text-decoration: none;
+    color: var(--activeTabLinkTextColor);
+    font-weight: bold; 
+}
+
+.nav-ul li.nav-li.active-tab {
+    background: white;
+    color: var(--activeTabLinkTextColor);
+}
+
+.nav-ul li.nav-li.active-tab:hover {
+    background: var(--tabHoverBackgroundColor);
+}
+
+.nav-ul li.nav-li.active-tab a:hover {
+    color: navy;
+}
+
+.menu-hamburger {
+    display: none;
+}
+
+.help-button {
+    position: absolute;
+    top: 10px;
+    right: 3%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 900px) {
+    .nav-ul a { font-size: 15px; }
+    .nav-ul { margin-top: 15px; }
+}
+
+@media screen and (max-width: 575px) {
+    .logo { font-size: 20px; }
+    .nav-ul { margin-top: 20px; }
+    .nav-ul a { font-size: 14px; }
+
+    .menu-hamburger {
+        display: inline;
+        position: absolute;
+        left: 20px;
+        top: 14px;
+        height: 40px;
+        width: 30px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .logo { font-size: 17px; }
+    .nav-ul { margin-top: 25px; }
+    .menu-hamburger {
+        top: 10px;
+        font-size: 22px;
+    }
+
+    .nav-ul a {
+        font-size: 13px;
+    }
+
+    .help-button { 
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .nav-ul { margin-top: 27px; }
+    .nav-ul a {
+        font-size: 12px;
+    }
+
+    .nav-ul li.nav-li { 
+        width: 70px;
+    }
+
+    .menu-hamburger {
+        left: 15px;
+        top: 10px;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .logo { font-size: 16px; } 
+    .nav-ul { margin-top: 28px; }
+
+    .menu-hamburger {
+        left: 10px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .logo { font-size: 15px; } 
+    .nav-ul { margin-top: 30px; }
+
+    .menu-hamburger {
+        left: 6px;
+        font-size: 16px;
+    }
+}
+
+

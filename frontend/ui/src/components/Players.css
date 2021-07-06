@@ -1,0 +1,226 @@
+
+.players-page-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px auto;
+} 
+
+.players-form-container {
+    display: inline;
+    width: 200px;
+    padding: 0;
+}
+
+/**********************************************************/
+
+.players-table-container {
+    display: inline;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.players-table-container table {
+    margin-top: 15px;
+}
+
+.players-table-container th {
+    background-color: palevioletred;
+    border: 1px solid gainsboro;
+    text-align: center;
+}
+
+.players-table-container th.sortByKey {
+    background-color: royalblue;
+    border: 1px solid gainsboro;
+}
+
+.players-table-container th:hover {
+    cursor: pointer;
+    background-color: rgb(31, 185, 83);
+}
+
+.players-table-container tbody a {
+    text-decoration: none;
+    color: navy;
+    font-weight: 500;
+}
+
+.players-table-container tbody td {
+    font-weight: normal;
+    border: 1px solid gainsboro;
+    text-align: center;
+}
+
+.players-table-container tbody tr:nth-of-type(even) {
+    background-color: #eeeeee;
+}
+
+.players-table-container tr:hover td {
+    background-color: rgb(232, 214, 250);
+}
+
+.players-table-container:before,
+.players-table-container:after {
+    content: "";
+    display: table;
+}
+
+.players-table-container:after {
+    clear: both;
+}
+
+.players-table-container td.bold-td a {
+    font-weight: bold;
+}
+
+.players-table-container td.bold-td {
+    text-align: left;
+}
+
+/**********************************************************/
+
+@media screen and (max-width: 1000px) {
+    .players-table-container th,
+    .players-table-container td {
+        font-size: 14px;
+        padding: 3px 4px;
+    }
+
+    .players-form-container {
+        width: 180px;
+    }
+}
+
+/****************************************************/
+
+.players-form-container-show-form {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 180px;
+    animation-name: slide;
+    animation-duration: 1s;
+}
+
+
+/****************************************************/
+
+@media screen and (max-width: 900px) {
+    .players-table-container {
+        margin-left: 10px;
+    }
+
+    .players-table-container th,
+    .players-table-container td {
+        font-size: 13.5px;
+        padding: 3px 4px;
+    }
+
+    .players-form-container {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .players-table-container th,
+    .players-table-container td {
+        font-size: 13px;
+        padding: 3px 4px;
+    }
+
+    .players-form-container {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .players-form-container {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .players-table-container th,
+    .players-table-container td {
+        font-size: 12.5px;
+        padding: 3px 3px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .players-table-container {
+        margin: 0 auto;
+    }
+
+    .players-form-container {
+        position: absolute;
+        top: 90px;
+        left: -200px;
+        width: 180px;
+        opacity: 0;
+    }
+
+    .animation-slide-in {
+        animation-name: slide-in;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+
+    .animation-slide-out {
+        animation-name: slide-out;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes slide-in {
+        from { 
+            left: -200px; 
+            opacity: 0;
+        }
+        to   { 
+            left: 0px; 
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-out {
+        from { 
+            left: 0px; 
+            opacity: 1;
+        }
+        to   { 
+            left: -200px; 
+            opacity: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .players-table-container th,
+    .players-table-container td {
+        font-size: 12px;
+        padding: 3px 3px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .players-table-container th,
+    .players-table-container td {
+        font-size: 11.5px;
+        padding: 3px 3px;
+    }
+}
+
+@media screen and (max-width: 405px) {
+    .players-table-container th,
+    .players-table-container td {
+        font-size: 11px;
+        padding: 3px 3px;
+    }
+}

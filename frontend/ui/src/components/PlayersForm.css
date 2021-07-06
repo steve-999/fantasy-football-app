@@ -1,0 +1,182 @@
+
+.players-form {
+    display: inline-block;
+    width: 100%;
+    font-family: Calibri;
+    font-size: 16px;
+}
+
+.positions-list-container, 
+.teams-list-container {
+    width: 100%;
+}
+
+.positions-ul, 
+.teams-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/********************************************************/
+
+.players-form label {
+    display: block;
+    padding: 3px 0 3px 10px;
+    color: white;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.players-form ul li {
+    display: block;
+    width: 100%;
+    background-color: darkslateblue;
+    color: white;
+    border-top: 1px solid #888;
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
+    padding: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.players-form ul > li:first-child {
+    background-color: forestgreen;
+}
+
+.players-form ul > li:last-child {
+    border: 1px solid #888;
+}
+
+.players-form li a:hover {
+    background-color: mediumorchid;
+}
+
+.players-form li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 2px 0 2px 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.players-form li a:active {
+    background-color: crimson;
+}
+
+/*******************************************************/
+
+.num-top-players-table label.label-num-top-players {
+    font-family: Calibri;
+    font-weight: normal;
+    font-size: 16px;
+    display: inline;
+    margin: 0;
+    color: white;
+}
+
+.num-top-players-table {
+    width: 100%;
+    background-color: darkslateblue;
+    box-sizing: border-box;
+    padding: 3px 0px;
+}
+
+.num-top-players-table label {
+    background-color: darkslateblue;
+} 
+
+.num-top-players-table .textbox-top-players-row {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.num-top-players-table .num-top-players-1st-col {
+    width: 90%;
+    padding: 4px 3px;
+    margin: 0;
+}
+
+.num-top-players-table .num-top-players-2nd-col {
+    width: 10%;
+    padding: 4px 5px;
+    margin: 0;
+}
+
+.num-top-players-table .textbox-num-top-players {
+    display: inline;
+    width: 40px;
+    height: 20px; 
+    padding: 2px 5px;
+    margin: 5px 5px; 
+    border: thin solid rgb(196, 196, 196);
+    border-radius: 5px;
+}
+
+.num-top-players-table .num-top-players-2nd-col select.num-top-players-select:focus {
+    outline: none;
+    border: 1px solid grey;
+    height: 16px;
+    font-size: 12px;
+}
+
+/*********************************************************/
+
+@media screen and (max-width: 840px) {
+    .players-form,
+    .num-top-players-table label.label-num-top-players
+    {
+        font-size: 14px;
+    }
+
+    .num-top-players-table select.num-top-players-select {
+        height: 16px;
+        width: 40px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .players-form,
+    .num-top-players-table label.label-num-top-players
+    {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .players-form,
+    .num-top-players-table label.label-num-top-players
+    {
+        font-size: 12.5px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .players-form,
+    .num-top-players-table label.label-num-top-players
+    {
+        font-size: 12px;
+    }
+
+    .players-form li a,
+    .num-top-players-table label.label-num-top-players 
+    {
+        padding: 2px 0 2px 5px;
+    }
+
+    .num-top-players-table select.num-top-players-select {
+        height: 15px;
+        width: 35px;
+        font-size: 11px;
+    }
+}
+
+

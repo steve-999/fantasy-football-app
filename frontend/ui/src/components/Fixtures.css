@@ -1,0 +1,91 @@
+
+.fixtures_tables_container {
+    margin-bottom: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.fixtures_table h3 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.fixtures_table table {
+    margin: 0 auto;
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+
+.fixtures_table th, 
+.fixtures_table td {
+    font-size: 13px;
+    text-align: center;
+    border: 1px solid white;
+    padding: 0;
+}
+
+.fixtures_table th {
+    padding: 7px 7px;
+}
+
+.fixtures_table {
+    margin: 0 auto;
+}
+
+.short_team_name {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.game_suffix {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.fixtures_table thead > tr {
+    height: 32px;
+}
+
+.fixtures_table div.table-cell-div {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-cell-inner-div {
+    padding: 0px 7px;
+}
+
+.fixtures_table span {
+    height: 100%;
+}
+
+.fixtures_table td.team_column a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.no_fixtures_remaining {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    .fixtures_table h3 {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .fixtures_table h3 {
+        font-size: 15px;
+    }
+}

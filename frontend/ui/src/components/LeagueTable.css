@@ -1,0 +1,134 @@
+
+.league-table-container h3 {
+    margin: 20px auto;
+    font-size: 26px;
+    text-align: center;
+}
+
+.league-table-container table {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.league-table-container tr {
+    height: 30px;
+}
+
+.league-table-container td, 
+.league-table-container th {
+    padding: 8px 9px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center; 
+    border-left: 1px solid #ddd;  
+}
+
+.league-table-container tbody tr:nth-of-type(even) {
+    background-color: white;
+}
+
+.league-table-container tbody tr:hover {
+    background-color: rgb(232, 214, 250);
+}
+
+.league-table-container tbody tr td a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.league-table-container tbody tr td a:hover {
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .league-table-container table {
+        width: 85%;
+    }
+
+    .league-table-container td, 
+    .league-table-container th {
+        padding: 8px 7px;
+        font-size: 12.5px; 
+    }
+
+    .league-table-container h3 {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .league-table-container td, 
+    .league-table-container th {
+        padding: 8px 6px;
+        font-size: 12px; 
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .league-table-container table {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .league-table-container td, 
+    .league-table-container th {
+        padding: 8px 5px;
+        font-size: 11px; 
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .league-table-container td, 
+    .league-table-container th {
+        padding: 8px 4px;
+        font-size: 10.5px; 
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .league-table-container table {
+        width: 95%;
+    }
+
+    .league-table-container td, 
+    .league-table-container th {
+        font-family: Calibri, sans-serif;
+        font-size: 13px; 
+    }
+
+    .league-table-container h3 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .league-table-container td, 
+    .league-table-container th {
+        font-size: 12px; 
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .league-table-container td, 
+    .league-table-container th {
+        font-size: 11.5px; 
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .league-table-container td, 
+    .league-table-container th {
+        padding: 8px 2px;
+        font-size: 11px; 
+    }
+}
+
+
+
+
+
+
