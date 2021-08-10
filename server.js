@@ -44,17 +44,6 @@ app.use(cors());
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-app.get('/api/test', (req, res) => {
-    const filepath = 'test.txt';
-    const json_data = {
-        a: 'b',
-        c: 'd'
-    }
-    if (DEBUG)
-        saveJsonResponse(filepath, json_data)
-    res.send('hello');
-});
-
 app.get('/api/current_gw', (req, res) => {
     const curr_datetime = (new Date()).toISOString();
     db.collection('fixture_list').find({datetime: {$lt: curr_datetime}}).sort({datetime: -1}).limit(1).toArray((err, data) => {

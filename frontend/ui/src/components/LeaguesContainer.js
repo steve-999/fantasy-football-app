@@ -320,7 +320,7 @@ class LeaguesContainer extends Component {
             // "team can play in any formation providing that 1 goalkeeper, at least 3 defenders and at least 1 forward"
             const num_positions = { 'GK': 0, 'DEF': 0, 'MID': 0, 'FWD': 0};
             firstXI.forEach(player => num_positions[player.position]++);
-            const verification = num_positions.GK === 1 && num_positions.DEF >= 1 && num_positions.FWD >= 1;
+            const verification = num_positions.GK === 1 && num_positions.DEF >= 3 && num_positions.FWD >= 1;
             return verification;
         }
     
