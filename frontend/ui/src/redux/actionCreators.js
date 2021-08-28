@@ -1,7 +1,5 @@
 import * as ActionTypes from './actionTypes';
-
-//const API_BASE_URL = 'http://localhost:5000/api';
-const API_BASE_URL = 'https://fantasy-football-app-r383r.ondigitalocean.app/api';
+import { API_BASE_URL } from '../environment/environment'
 
 export const fetchPlayers = (num_players=9999) => {
     return async dispatch => {
@@ -213,6 +211,7 @@ export const fetch_squads_for_league_id = (league_id, curr_gw) => {
     return async dispatch => {
         dispatch({ type: ActionTypes.LOADING_SQUADS_FOR_LEAGUE_ID });  
         const url = `${API_BASE_URL}/squads_for_league_id/${league_id}/${curr_gw}`; 
+        console.log('fetch_squads_for_league_id > url', url)
         try {
             const resp = await fetch(url);
             const data = await resp.json();

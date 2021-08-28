@@ -5,8 +5,8 @@ import { toggle_show_players_form } from '../redux/actionCreators';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
+import { LEAGUE_ID } from '../environment/environment'
 
-const LEAGUE_ID = '1437093';
 const SHOW_HAMBURGER_BARS_MAX_WIDTH = 575;
 
 const Navbar = (props) => {

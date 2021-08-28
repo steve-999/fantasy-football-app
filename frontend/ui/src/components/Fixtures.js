@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { fetch_fixture_difficulty, fetch_team_ids } from '../redux/actionCreators';
 
 const DEFAULT_TRANSPARENCY = 0.65;
+const MAX_GW_COLUMNS = 10;
 
 const mapStateToProps = state => {
     return {
@@ -24,7 +25,11 @@ const mapDispatchToProps = dispatch => {
 function unique(arr) {
     const set_var = new Set();
     arr.map(x => set_var.add(x));
-    return [...set_var].sort();
+    return [...set_var].sort((a, b) => {
+        if (parseInt(a) < parseInt(b)) return -1;
+        if (parseInt(a) > parseInt(b)) return 1;
+        return 0;
+    });;
 }
 
 
@@ -75,7 +80,7 @@ class Fixtures extends Component {
 
     process_fixture_difficulty_data(fixtures) {
         const all_gws_list = fixtures
-                                .map(x =>  x.datetime > (new Date()).toISOString() ? x.gw : false)
+                                .map(x => x.datetime > (new Date()).toISOString() ? x.gw : false)
                                 .filter(x => x !== false);                
         const gws_remaining = unique(all_gws_list);
 
@@ -119,7 +124,7 @@ class Fixtures extends Component {
         this.setState({
             fixture_list: fixtures,
             fixtures_dict: fixtures_dict,
-            gws_remaining: gws_remaining,
+            gws_remaining: gws_remaining.slice(0, MAX_GW_COLUMNS),
             teams: teams,
             Nmax_games: Nmax_games
         });
@@ -232,12 +237,12 @@ class Fixtures extends Component {
             return (
                 <div className="fixtures_tables_container">
                     <div className="fixtures_table">
-                        <h3>Fixtures for Goalkeepers &amp; Defenders</h3>
-                        { this.create_fixtures_table('defence') }
-                    </div>
-                    <div className="fixtures_table">
                         <h3>Fixtures for Midfielders &amp; Forwards</h3>
                         { this.create_fixtures_table('attack') }
+                    </div>                    
+                    <div className="fixtures_table">
+                        <h3>Fixtures for Goalkeepers &amp; Defenders</h3>
+                        { this.create_fixtures_table('defence') }
                     </div>
                 </div>
             );
