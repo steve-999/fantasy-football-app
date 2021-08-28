@@ -237,11 +237,11 @@ class Fixtures extends Component {
             return (
                 <div className="fixtures_tables_container">
                     <div className="fixtures_table">
-                        <h3>Fixtures for Midfielders &amp; Forwards</h3>
+                        <h3>Fixture Difficulty for Midfielders &amp; Forwards</h3>
                         { this.create_fixtures_table('attack') }
                     </div>                    
                     <div className="fixtures_table">
-                        <h3>Fixtures for Goalkeepers &amp; Defenders</h3>
+                        <h3>Fixture Difficulty for Goalkeepers &amp; Defenders</h3>
                         { this.create_fixtures_table('defence') }
                     </div>
                 </div>
