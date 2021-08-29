@@ -57,7 +57,7 @@ function LeagueTable({curr_gw, league_id, manager_ids, league_table_dict, league
                     { cols_list.includes('Rank') ? <td key="rank">{ manager_ids.length > 1 ? i+1 : '' }</td> : null}
                     <td key="team">
                         <Link to={`/leagues/${league_id}/${manager_id}/`}>
-                            { league_table_dict && league_table_dict[manager_id]['team'].replace(/[\W]+/g, " ") }
+                            { league_table_dict && league_table_dict[manager_id]['team']}
                         </Link>
                     </td>
                     {
