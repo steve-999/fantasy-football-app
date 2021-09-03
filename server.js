@@ -31,7 +31,10 @@ console.log('process.env.PORT', process.env.PORT);
 
 let db;
 MongoClient.connect(dbUri, { useUnifiedTopology: true }, function(err, client) {
-    if(!err) {
+    if (err) {
+        console.log('error', err);
+    }
+    else {
         console.log("mongodb connected");
         db = client.db('fantasy_football');
     }
@@ -56,7 +59,7 @@ app.get('/api/current_gw', (req, res) => {
         }
         res.json({"curr_gw": 0})
     })
-});
+  });
 
 app.get('/api/players/:num_players_string?', (req, res) => {
     let num_players_string = req.params.num_players_string;
