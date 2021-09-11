@@ -25,6 +25,13 @@ const mapDispatchToProps = dispatch => {
 function unique(arr) {
     const set_var = new Set();
     arr.map(x => set_var.add(x));
+    return [...set_var].sort();
+}
+
+
+function sort_unique_gws(arr) {
+    const set_var = new Set();
+    arr.map(x => set_var.add(x));
     return [...set_var].sort((a, b) => {
         if (parseInt(a) < parseInt(b)) return -1;
         if (parseInt(a) > parseInt(b)) return 1;
@@ -82,7 +89,7 @@ class Fixtures extends Component {
         const all_gws_list = fixtures
                                 .map(x => x.datetime > (new Date()).toISOString() ? x.gw : false)
                                 .filter(x => x !== false);                
-        const gws_remaining = unique(all_gws_list);
+        const gws_remaining = sort_unique_gws(all_gws_list);
 
         const home_teams = fixtures.map(x => x.team_h_name);
         const away_teams = fixtures.map(x => x.team_a_name);
