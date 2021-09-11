@@ -93,7 +93,7 @@ class Fixtures extends Component {
 
         const home_teams = fixtures.map(x => x.team_h_name);
         const away_teams = fixtures.map(x => x.team_a_name);
-        const teams = unique(home_teams.concat(away_teams));
+        const teams = unique(home_teams.concat(away_teams)); 
 
         const fixtures_dict = {};
         teams.forEach(team => {
