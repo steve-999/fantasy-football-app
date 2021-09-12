@@ -60,7 +60,7 @@ const TeamsStatsTable = (props) => {
                 val = <Link to={`/teams/${team_dict.team_name.replace(' ', '_')}`}>{ team_dict.team_name }</Link>;
                 return <td key={team_dict.team_name} className="team-name">{ val }</td>;
             }
-            else if (['avg_GF', 'avg_GA', 'norm_GF', 'norm_GA'].includes(key)) {
+            else if (['GF_ma_S', 'GF_ma_L', 'GA_ma_S', 'GA_ma_L'].includes(key)) {
                 val = team_dict[key].toFixed(1);
             }
             return <td key={key}>{val}</td>;

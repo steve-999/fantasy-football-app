@@ -3,7 +3,6 @@ import { Switch, Route } from 'react-router-dom';
 import { sort_LOD_by_key, create_lookup_dict } from '../misc_functions';
 import LeagueTable from './LeagueTable';
 import Squad from './Squad';
-
 import { connect } from 'react-redux';
 import { 
     fetch_league_info, 
@@ -11,6 +10,8 @@ import {
     fetch_squads_for_league_id,
     fetch_curr_gw
 } from '../redux/actionCreators';
+
+const DEBUG = false;
 
 const mapStateToProps = state => {
     return {
@@ -101,10 +102,19 @@ class LeaguesContainer extends Component {
                 manager_ids: this.props.league_info_data.manager_ids,
                 league_name: this.props.league_info_data.name
             }, () => {
+                if (DEBUG) {
+                    console.log('componentDidUpdate > this.state.league_info', this.state.league_info)
+                    console.log('componentDidUpdate > this.state.manager_ids', this.state.manager_ids)
+                    console.log('componentDidUpdate > this.state.league_name', this.state.league_name)
+                }
                 const league_table_dict = this.create_league_table_dict(this.props.league_info_data);
                 if(league_table_dict) {
                     this.setState({
                         league_table_dict: league_table_dict
+                    }, () => {
+                        if (DEBUG) {
+                            console.log('componentDidUpdate > this.state.league_table_dict', this.state.league_table_dict)
+                        }
                     });
                 }
             });  
@@ -115,6 +125,9 @@ class LeaguesContainer extends Component {
             this.setState({
                 live_data_dict: live_data_dict
             }, () => {
+                if (DEBUG) {
+                    console.log('componentDidUpdate > this.state.live_data_dict', this.state.live_data_dict)
+                }
                 this.calculate_league_table_dict(this.state.league_table_dict, this.state.live_data_dict, this.state.squads_for_league_id)
             });
         }
@@ -123,6 +136,9 @@ class LeaguesContainer extends Component {
             this.setState({
                 squads_for_league_id: this.props.squads_for_league_id_data
             }, () => {
+                if (DEBUG) {
+                    console.log('componentDidUpdate > this.state.squads_for_league_id', this.state.squads_for_league_id)
+                }
                 this.calculate_league_table_dict(this.state.league_table_dict, this.state.live_data_dict, this.state.squads_for_league_id);
             });
         }
@@ -202,6 +218,12 @@ class LeaguesContainer extends Component {
     
     
     create_league_squads_dict(league_table_dict, live_data_dict, squads_for_league_id) {
+        if (DEBUG) {
+            console.log('\n\ncreate_league_squads_dict()')
+            console.log('create_league_squads_dict > league_table_dict', league_table_dict)
+            console.log('create_league_squads_dict > squads_for_league_id', squads_for_league_id)
+            console.log('create_league_squads_dict > live_data_dict', live_data_dict)
+        }
         if (!league_table_dict || !live_data_dict || !squads_for_league_id || Object.keys(live_data_dict).length === 0) {
             return undefined;
         }
@@ -254,6 +276,14 @@ class LeaguesContainer extends Component {
     
     
     calcTotalPoints(manager_ids, league_table_dict, league_squads_dict, live_data_dict) {
+        if (DEBUG) {
+            console.log('\n\ncalcTotalPoints()\n')
+            console.log('calcTotalPoints > manager_ids', manager_ids)
+            console.log('calcTotalPoints > league_table_dict', league_table_dict)
+            console.log('calcTotalPoints > league_squads_dict', league_squads_dict)
+            console.log('calcTotalPoints > live_data_dict', live_data_dict)
+        }
+
         if(![manager_ids, league_table_dict, league_squads_dict, live_data_dict].every(v => v)) {
             return undefined;
         }
@@ -317,7 +347,7 @@ class LeaguesContainer extends Component {
     calcSubstitutesPoints(league_table_dict, league_squads_dict) {  
             
         function check_team_meets_squad_criteria(firstXI) {
-            // "team can play in any formation providing that 1 goalkeeper, at least 3 defenders and at least 1 forward"
+            // "team can play in any formation providing there is 1 goalkeeper, at least 3 defenders and at least 1 forward"
             const num_positions = { 'GK': 0, 'DEF': 0, 'MID': 0, 'FWD': 0};
             firstXI.forEach(player => num_positions[player.position]++);
             const verification = num_positions.GK === 1 && num_positions.DEF >= 3 && num_positions.FWD >= 1;
